@@ -8,6 +8,13 @@ var randomIndex = Math.floor(Math.random() * alphabet.length);
 var computerChoice = alphabet[randomIndex];
 console.log(computerChoice);
 
-for (var i = 0; i < alphabet.length; i++) {
-    console.log(alphabet[i]);
+// for (var i = 0; i < alphabet.length; i++) {
+//     console.log(alphabet[i]);
+// }
+
+document.onkeyup = function () {
+    var userguess = String.fromCharCode(event.keyCode).toLowerCase();
+    console.log(userguess);
+
+    userguess === computerChoice ? alert('winner') : console.log('try again');
 }
