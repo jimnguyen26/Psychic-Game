@@ -4,6 +4,7 @@ var lossCount = 0;
 var guessesRemaining = 10;
 var guessedLetters = [];
 
+
 var winsText = document.getElementById("#char1");
 var lossText = document.getElementById('#char2');
 var guessesText = document.getElementById('#char3');
@@ -25,27 +26,29 @@ document.onkeyup = function () {
     if ((userGuess === computerChoice)) {
         winCount++;
         alert("You win!");
-    } else if (userGuess !== computerChoice)
 
+
+    } else if ((userGuess !== computerChoice)) {
         guessesRemaining--;
+
+    }
+    if (guessesRemaining === 0) {
+        lossCount++;
+
+    }
+
 
     // else((userGuess!--computerChoice)) {
     // guessesRemaining--;
     // rr}
 
-
-
-
-
-
-
-
     winsText.textContent = winCount;
     lossText.textContent = lossCount;
     guessesText.textContent = guessesRemaining;
 
-
 };
+
+
 // userGuess === computerChoice ? alert('Correct guess!') : console.log('try again');
 
 
