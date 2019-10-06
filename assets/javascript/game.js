@@ -30,7 +30,7 @@ document.onkeyup = function () {
         computerChoice = abc[randomIndex];
         console.log(computerChoice);
         guessesRemaining = 10;
-        document.querySelector('#char4').textContent = [];
+        guessedLetters = [];
 
     } else if ((userGuess !== computerChoice)) {
         guessesRemaining--;
@@ -43,7 +43,7 @@ document.onkeyup = function () {
         computerChoice = abc[randomIndex];
         console.log(computerChoice);
         guessesRemaining = 10;
-        document.querySelector('#char4').textContent = [];
+        guessedLetters = [];
     }
 
     winsText.textContent = winCount;
