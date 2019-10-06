@@ -10,6 +10,7 @@ var guessedLetters = [];
 var winsText = document.getElementById("#char1");
 var lossText = document.getElementById('#char2');
 var guessesText = document.getElementById('#char3');
+var wrongText = document.getElementById('#char4');
 
 var randomIndex = Math.floor(Math.random() * abc.length);
 var computerChoice = abc[randomIndex];
@@ -18,8 +19,8 @@ console.log(computerChoice);
 document.onkeyup = function () {
 
     var userGuess = String.fromCharCode(event.keyCode).toLowerCase();
-    console.log(userGuess);
-    document.querySelector('#char4').textContent = event.key;
+    guessedLetters.push(userGuess);
+    document.querySelector('#char4').textContent = guessedLetters;
 
     if ((userGuess === computerChoice)) {
         winCount++;
@@ -28,9 +29,12 @@ document.onkeyup = function () {
         computerChoice = abc[randomIndex];
         console.log(computerChoice);
         guessesRemaining = 10;
+        document.querySelector('#char4').textContent = [];
 
     } else if ((userGuess !== computerChoice)) {
         guessesRemaining--;
+        //wrongText.textContent = userGuess.join(', ');
+        //wrongText.push(userGuess);
     }
 
     if (guessesRemaining === 0) {
@@ -40,6 +44,7 @@ document.onkeyup = function () {
         computerChoice = abc[randomIndex];
         console.log(computerChoice);
         guessesRemaining = 10;
+        document.querySelector('#char4').textContent = [];
     }
 
     winsText.textContent = winCount;
