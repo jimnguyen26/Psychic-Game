@@ -20,6 +20,7 @@ document.onkeyup = function () {
 
     var userGuess = String.fromCharCode(event.keyCode).toLowerCase();
     guessedLetters.push(userGuess);
+
     document.querySelector('#char4').textContent = guessedLetters;
 
     if ((userGuess === computerChoice)) {
@@ -33,8 +34,6 @@ document.onkeyup = function () {
 
     } else if ((userGuess !== computerChoice)) {
         guessesRemaining--;
-        //wrongText.textContent = userGuess.join(', ');
-        //wrongText.push(userGuess);
     }
 
     if (guessesRemaining === 0) {
